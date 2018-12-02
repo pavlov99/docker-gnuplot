@@ -13,7 +13,9 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.schema-version="1.0"
 
 RUN apk add --update gnuplot \
+        fontconfig \
         ttf-ubuntu-font-family \
-        fontconfig && \
+        msttcorefonts-installer && \
+    update-ms-fonts && \
     fc-cache -f && \
     rm -rf /var/cache/apk/*
